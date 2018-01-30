@@ -256,7 +256,7 @@ class Jalali_date {
 	
 	    if($month=="11") return "بهمن";
 	
-	    if($month=="12") return "اسفند";
+	    if($month=="12") return "اسپند";
 	}
 	
 	////here convert to  number in persian
