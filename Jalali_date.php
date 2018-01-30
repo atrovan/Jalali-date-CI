@@ -4,9 +4,11 @@ class Jalali_date {
 		
 	public static function jdate($type,$maket="now")
 	{
-		//set 1 if you want translate number to farsi or if you don't like set 0
+		//Set to 1 only if you want to translate numbers to Persian numbers. otherwise set to 0
 		$transnumber=1;
-		///chosse your timezone
+		
+		
+		///chose your timezone
 		$TZhours=0;
 		$TZminute=0;
 	
@@ -166,20 +168,21 @@ class Jalali_date {
 		return $result;
 	}
 	
+	
 	public static function g2j($date)
 	{
-	list( $year, $month, $day ) = preg_split ( '/-/', $date );
-	list( $jy, $jm, $jd ) = self::gregorian_to_jalali($year, $month, $day);
-	$date=$jy.'-'.$jm.'-'.$jd;
-	return $date;
+		list( $year, $month, $day ) = preg_split ( '/-/', $date );
+		list( $jy, $jm, $jd ) = self::gregorian_to_jalali($year, $month, $day);
+		$date=$jy.'-'.$jm.'-'.$jd;
+		return $date;
 	}
 	
 	public static function j2g($date)
 	{
-	list( $year, $month, $day ) = preg_split ( '/-/', $date );
-	list( $gy, $gm, $gd ) = self::jalali_to_gregorian($year, $month, $day);
-	$date=$gy.'-'.$gm.'-'.$gd;
-	return $date;
+		list( $year, $month, $day ) = preg_split ( '/-/', $date );
+		list( $gy, $gm, $gd ) = self::jalali_to_gregorian($year, $month, $day);
+		$date=$gy.'-'.$gm.'-'.$gd;
+		return $date;
 	}
 	
 	public static function jmaketime($hour,$minute,$second,$jmonth,$jday,$jyear)
@@ -190,7 +193,7 @@ class Jalali_date {
 	}
 	
 	
-	///Find Day Begining Of Month
+	///Find the first day in month
 	public static function mstart($month,$day,$year)
 	{
 		list( $jyear, $jmonth, $jday ) = self::gregorian_to_jalali($year, $month, $day);
@@ -230,7 +233,7 @@ class Jalali_date {
 		return $lastdatep-1;
 	}
 	
-	//translate number of month to name of month
+	// Return persian month name from number
 	public static function monthname($month)
 	{
 	
@@ -259,7 +262,7 @@ class Jalali_date {
 	    if($month=="12") return "اسپند";
 	}
 	
-	////here convert to  number in persian
+	// Latin number to Persian number converter
 	public static function Convertnumber2farsi($srting) 
 	{
 		$num0="0";
@@ -292,7 +295,7 @@ class Jalali_date {
 		}
 	return   $stringtemp;
 	
-	}///end conver to number in persian
+	}
 	
 	public static function div($a,$b) {
 	    return (int) ($a / $b);
