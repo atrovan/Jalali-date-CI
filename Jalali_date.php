@@ -242,7 +242,7 @@ class Jalali_date {
 	
 	    if($month=="04") return  "تیر";
 	
-	    if($month=="05") return "مرداد";
+	    if($month=="05") return "امرداد";
 	
 	    if($month=="06") return "شهریور";
 	
