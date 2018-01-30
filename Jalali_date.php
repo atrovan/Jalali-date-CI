@@ -39,14 +39,14 @@ class Jalali_date {
 	
 				case "A":
 					$result1=date("a",$need);
-					if($result1=="pm") $result.= "بعدازظهر";
-					else $result.="قبل ‏ازظهر";
+					if($result1=="pm") $result.= "پس از نیمروز";
+					else $result.="سپیده دم";
 					break;
 	
 				case "a":
 					$result1=date("a",$need);
-					if($result1=="pm") $result.= "ب.ظ";
-					else $result.="ق.ظ";
+					if($result1=="pm") $result.= "سپیده دم";
+					else $result.="نیمروز";
 					break;
 				case "d":
 					list( $jyear, $jmonth, $jday ) = self::gregorian_to_jalali($year, $month, $day);
