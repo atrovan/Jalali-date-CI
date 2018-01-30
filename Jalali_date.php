@@ -52,7 +52,7 @@ class Jalali_date {
 					list( $jyear, $jmonth, $jday ) = self::gregorian_to_jalali($year, $month, $day);
 					if($jday<10)$result1="0".$jday;
 					else 	$result1=$jday;
-					if($transnumber==1) $result.=Convertnumber2farsi($result1);
+					if($transnumber==1) $result.=self::Convertnumber2farsi($result1);
 					else $result.=$result1;
 					break;
 				case "D":
@@ -73,33 +73,33 @@ class Jalali_date {
 					break;
 				case "g":
 					$result1=date("g",$need);
-					if($transnumber==1) $result.=Convertnumber2farsi($result1);
+					if($transnumber==1) $result.=self::Convertnumber2farsi($result1);
 					else $result.=$result1;
 					break;
 				case "G":
 					$result1=date("G",$need);
-					if($transnumber==1) $result.=Convertnumber2farsi($result1);
+					if($transnumber==1) $result.=self::Convertnumber2farsi($result1);
 					else $result.=$result1;
 					break;
 					case "h":
 					$result1=date("h",$need);
-					if($transnumber==1) $result.=Convertnumber2farsi($result1);
+					if($transnumber==1) $result.=self::Convertnumber2farsi($result1);
 					else $result.=$result1;
 					break;
 				case "H":
 					$result1=date("H",$need);
-					if($transnumber==1) $result.=Convertnumber2farsi($result1);
+					if($transnumber==1) $result.=self::Convertnumber2farsi($result1);
 					else $result.=$result1;
 					break;
 				case "i":
 					$result1=date("i",$need);
-					if($transnumber==1) $result.=Convertnumber2farsi($result1);
+					if($transnumber==1) $result.=self::Convertnumber2farsi($result1);
 					else $result.=$result1;
 					break;
 				case "j":
 					list( $jyear, $jmonth, $jday ) = self::gregorian_to_jalali($year, $month, $day);
 					$result1=$jday;
-					if($transnumber==1) $result.=Convertnumber2farsi($result1);
+					if($transnumber==1) $result.=self::Convertnumber2farsi($result1);
 					else $result.=$result1;
 					break;
 				case "l":
@@ -117,7 +117,7 @@ class Jalali_date {
 					list( $jyear, $jmonth, $jday ) = self::gregorian_to_jalali($year, $month, $day);
 					if($jmonth<10) $result1="0".$jmonth;
 					else	$result1=$jmonth;
-					if($transnumber==1) $result.=Convertnumber2farsi($result1);
+					if($transnumber==1) $result.=self::Convertnumber2farsi($result1);
 					else $result.=$result1;
 					break;
 				case "M":
@@ -127,12 +127,12 @@ class Jalali_date {
 				case "n":
 					list( $jyear, $jmonth, $jday ) = self::gregorian_to_jalali($year, $month, $day);	
 					$result1=$jmonth;
-					if($transnumber==1) $result.=Convertnumber2farsi($result1);
+					if($transnumber==1) $result.=self::Convertnumber2farsi($result1);
 					else $result.=$result1;
 					break;
 				case "s":
 					$result1=date("s",$need);
-					if($transnumber==1) $result.=Convertnumber2farsi($result1);
+					if($transnumber==1) $result.=self::Convertnumber2farsi($result1);
 					else $result.=$result1;
 					break;
 				case "S":
@@ -143,19 +143,19 @@ class Jalali_date {
 					break;
 				case "w":
 					$result1=date("w",$need);
-					if($transnumber==1) $result.=Convertnumber2farsi($result1);
+					if($transnumber==1) $result.=self::Convertnumber2farsi($result1);
 					else $result.=$result1;
 					break;
 				case "y":
 					list( $jyear, $jmonth, $jday ) = self::gregorian_to_jalali($year, $month, $day);	
 					$result1=substr($jyear,2,4);
-					if($transnumber==1) $result.=Convertnumber2farsi($result1);
+					if($transnumber==1) $result.=self::Convertnumber2farsi($result1);
 					else $result.=$result1;
 					break;
 				case "Y":
 					list( $jyear, $jmonth, $jday ) = self::gregorian_to_jalali($year, $month, $day);
 					$result1=$jyear;
-					if($transnumber==1) $result.=Convertnumber2farsi($result1);
+					if($transnumber==1) $result.=self::Convertnumber2farsi($result1);
 					else $result.=$result1;
 					break;		
 				default:
@@ -260,7 +260,7 @@ class Jalali_date {
 	}
 	
 	////here convert to  number in persian
-	function Convertnumber2farsi($srting) 
+	public static function Convertnumber2farsi($srting) 
 	{
 		$num0="0";
 		$num1="1";
