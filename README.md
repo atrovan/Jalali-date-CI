@@ -1,2 +1,2 @@
 # Jalali-date-CI
-Popular Persian calendar library [jdate] for CodeIgniter
+Popular Jalali(Persian) Date converter library for CodeIgniter framework
